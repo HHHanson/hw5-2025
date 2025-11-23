@@ -56,20 +56,21 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
-document.querySelector("#volumeSlider").addEventListener("change", function() {
+document.querySelector("#volumeSlider").addEventListener("input", function() {
 	console.log("Volume Changed");
-	video.volume=this.value/100;
-	document.querySelector("#volume").innerHTML=video.volume*100+"%";
+	video.volume = this.value / 100;
+	document.querySelector("#volume").innerHTML = this.value + "%";
 });
 
+
 document.querySelector("#vintage").addEventListener("click", function() {
-	console.log("Old School");
-	video.classList.add("oldSchool");
+    console.log("Old School");
+    video.classList.add("oldSchool");
 });
 
 document.querySelector("#orig").addEventListener("click", function() {
-	console.log("Original");
-	video.classList.remove("oldSchool");
+    console.log("Original");
+    video.classList.remove("oldSchool");
 });
 // document.querySelector("#play").addEventListener("click", function() {
 // 	console.log("Play Video");
